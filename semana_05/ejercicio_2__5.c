@@ -1,21 +1,38 @@
-#include<stdio.h>
+/*
+Ejercicio 2
 
+Así debe funcionar el programa:
+  ¿Cuánto dinero traes? 1000
+
+  ¿Cuánto cuesta el producto? 129.75
+
+  Unidades que vas a comprar: 7
+
+  Lo que vas a gastar:   $  908.25
+
+  Lo que te va a sobrar: $   91.75
+
+*/
+
+#include<stdio.h>
 
 int main(void){
 
-    int cantDulces, cantNinos, dulcesRepartir,dulcesSobrantes;
+    float dinero, costoProducto, totalGasto, dineroRestante;
+    int unitComprar;
 
+    printf("¿Cuánto dinero traes? ");
+    scanf("%f",&dinero);
+    printf("¿Cuánto cuesta el producto? ");
+    scanf("%f",&costoProducto);
+     printf("Unidades que vas a comprar: ");
+    scanf("%d",&unitComprar);
 
-    printf("¿Cuántos dulces traes? ");
-    scanf("%d",&cantDulces);
-    printf("¿Cuántos niños vinieron? ");
-    scanf("%d",&cantNinos);
+    totalGasto = costoProducto*unitComprar;
+    dineroRestante = dinero-totalGasto;
 
-    dulcesRepartir = cantDulces/cantNinos;
-    dulcesSobrantes = cantDulces%cantNinos;
+    printf("Lo que vas a gastar: $%.2f\nLo que te va a sobrar: $%.2f ",totalGasto,dineroRestante);
 
-    printf("A cada niño le tocan %d dulces\nTe van a sobrar %d dulces",dulcesRepartir,dulcesSobrantes);
-
-
+    
     return 0;
 }

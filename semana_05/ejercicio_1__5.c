@@ -1,23 +1,37 @@
-#include<stdio.h>
+/*
+Ejercicio 1.
 
+Solicitar al usuario su velocidad actual (km/h) y la distancia (km)  (Utilizar  números enteros para estos datos)
+
+Imprimir el tiempo que tardará en llegar en minutos y segundos.
+Así debe funcionar el programa:
+  Velocidad actual (km/h): 130
+
+  Distancia a recorrer (km): 100
+
+  Llegarás a tu destino en 46 minutos y 9 segundos
+  
+*/
+
+
+#include<stdio.h>
 
 int main(void){
 
-    int edadPersona1, edadPersona2, edadPersona3;
-    float promedio;
+    int velocidadActual, distancia, minutos, segundos;
+    float tiempo;
+
+    printf("Ingrese su velocidad actual en km/h: ");
+    scanf("%d",&velocidadActual);
+    printf("Ingrese la distancia a recorrer en km: ");
+    scanf("%d",&distancia);
+
+    tiempo   = ((float)distancia / (float)velocidadActual)*60;
+    minutos  = tiempo;
+    segundos = ((float)tiempo - minutos)*60;
 
 
-    printf("Ingrese la primera edad: ");
-    scanf("%d",&edadPersona1);
-    printf("Ingrese la segunda edad: ");
-    scanf("%d",&edadPersona2);
-    printf("Ingrese la tercera edad: ");
-    scanf("%d",&edadPersona3);
-
-    promedio = (float)(edadPersona1+edadPersona2+edadPersona3)/3;
-
-
-    printf("%.1f", promedio);
+    printf("Llegarás a tu destino en %d minutos y %d segundos.", minutos, segundos);
 
     
     return 0;
