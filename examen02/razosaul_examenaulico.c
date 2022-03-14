@@ -28,11 +28,19 @@ int main(void){
         {
 
         case 1:
+           do
+           {
             printf("Ingrese el primer número entero: ");
             scanf("%d",&num1);
+           } while ((num1==0)||(num1>255));
+
+           do
+           {
             printf("Ingrese el segundo número entero: ");
             scanf("%d",&num2);
-            break;
+           } while ((num2==0)||(num2>255));
+
+           break;
 
         case 2:
             mostrarNumeros(num1,num2);
@@ -80,6 +88,10 @@ int main(void){
     return 0;
 }
 
+// ********************************** FUNCIONES *****************************************
+
+
+
 /* FUNCIÓN MENU */
 int menu(void){
     int num;
@@ -117,7 +129,7 @@ void binario(num){
 
 /* FUNCIÓN PARA MOSTRAR NÚMEROS */
 void mostrarNumeros(num1,num2){
-    if(num1>0 && num2>0){
+    if((num1!=0 && num2!=0)&&(num1<=255 && num2<=255)){
         printf("Los números guardados son:\n\nDECIMAL: (%d), (%d)\n",num1,num2);
         printf("HEXADECIMAL: (%X), (%X)\n",num1,num2);
         printf("BINARIO: ");
@@ -127,7 +139,7 @@ void mostrarNumeros(num1,num2){
         printf("\n");   
     }
     else{
-        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+        printf("Aún no registra números enteros o su entrada está fuera de rango...\n\n");
     }
     
 }
@@ -146,13 +158,13 @@ void mostrarNum(num){
 /* FUNCIÓN PARA MOSTRAR AND DE LOS NÚMERO ENTEROS INGRESADOS */
 void mostrarAnd(num1, num2){
     int resultado;
-    if(num1>0 && num2>0){
+    if((num1!=0 && num2!=0)&&(num1<=255 && num2<=255)){
         resultado = num1 & num2;
         mostrarNum(resultado);
         
     }  
     else{
-        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+        printf("Aún no registra números enteros o su entrada está fuera de rango...\n\n");
     }
 
 }
@@ -160,13 +172,13 @@ void mostrarAnd(num1, num2){
 /* FUNCIÓN PARA MOSTRAR OR DE LOS NÚMERO ENTEROS INGRESADOS */
 void mostrarOr(num1, num2){
     int resultado;
-    if(num1>0 && num2>0){
+    if((num1!=0 && num2!=0)&&(num1<=255 && num2<=255)){
         resultado = num1 | num2;
         mostrarNum(resultado);
         
     }  
     else{
-        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+        printf("Aún no registra números enteros o su entrada está fuera de rango...\n\n");
     }
 
 }
@@ -174,13 +186,13 @@ void mostrarOr(num1, num2){
 /* FUNCIÓN PARA MOSTRAR NOT DEL PRIMER NÚMERO TECLEADO*/
 void mostrarNot(num1){
     int resultado;
-    if(num1>0){
-        resultado = !num1;
+    if((num1!=0)&&(num1<=255)){
+        resultado = ~num1;
         mostrarNum(resultado);
         
     }  
     else{
-        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+        printf("Aún no registra números enteros o su entrada está fuera de rango...\n\n");
     }
 
 }
@@ -189,13 +201,13 @@ void mostrarNot(num1){
 /* FUNCIÓN DE OPERACIÓN DE DIVISIÓN DE NÚMEROS INGRESADOS*/
 void division(num1,num2){
     float resultado;
-    if(num1>0 && num2>0){
+    if((num1!=0 && num2!=0)&&(num1<=255 && num2<=255)){
         resultado = ((float)num1/(float)num2);
         printf("El resultado de la división de %d y %d es: %.2f\n",num1,num2,resultado);
          
     }
     else{
-        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+        printf("Aún no registra números enteros o su entrada está fuera de rango...\n\n");
     }
     
 }
@@ -203,13 +215,13 @@ void division(num1,num2){
 /* FUNCIÓN DE OPERACIÓN DE DIVISIÓN ENTERA DE NÚMEROS INGRESADOS*/
 void divisionEntera(num1,num2){
     int resultado;
-    if(num1>0 && num2>0){
+    if((num1!=0 && num2!=0)&&(num1<=255 && num2<=255)){
         resultado = (num1/num2);
         printf("El resultado de la división entera de %d y %d es: %d\n",num1,num2,resultado);
 
     }
     else{
-        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+        printf("Aún no registra números enteros o su entrada está fuera de rango...\n\n");
     }
 
 }
@@ -217,12 +229,12 @@ void divisionEntera(num1,num2){
 /* FUNCIÓN DE OPERACIÓN DEL MÓDULO DE NÚMEROS INGRESADOS*/
 void modulo(num1,num2){
     int resultado;
-    if(num1>0 && num2>0){
+    if((num1!=0 && num2!=0)&&(num1<=255 && num2<=255)){
         resultado = (num1%num2);
         printf("El resultado del modulo de %d y %d es: %d\n",num1,num2,resultado);
     }
     else{
-        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+        printf("Aún no registra números enteros o su entrada está fuera de rango...\n\n");
     }
 
 }
