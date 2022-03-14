@@ -9,10 +9,9 @@ void mostrarNum(int); //PARA MOSTRAR UN SOLO NÚMERO RESULTANTE DE LAS SIGUIENTE
 void mostrarAnd(int, int);
 void mostrarOr(int, int);
 void mostrarNot(int);
-void imprimeBinario(int);
-float division(int,int);
-int divisionEntera(int,int);
-int modulo(int, int);
+void division(int,int);
+void divisionEntera(int,int);
+void modulo(int, int);
 
 /* FUNCIÓN BINARIO*/
 void binario(int);
@@ -20,6 +19,7 @@ void binario(int);
 
 int main(void){
     int opcion, num1=0, num2=0;
+
     printf("\nBIENVENIDO AL PROGRAMA...");
 
     do{
@@ -43,23 +43,23 @@ int main(void){
             break;
 
         case 4:
-            
+            mostrarOr(num1,num2);
             break;
 
         case 5:
-            
+            mostrarNot(num1);
             break;
 
         case 6:
-            
+            division(num1,num2);
             break;
 
         case 7:
-            
+            divisionEntera(num1,num2);
             break;
 
         case 8:
-            
+            modulo(num1,num2);
             break;
 
 
@@ -68,6 +68,7 @@ int main(void){
             break;
         
         default:
+            printf("Entrada no válida, intente de nuevo...\n");
             break;
         }
 
@@ -131,6 +132,7 @@ void mostrarNumeros(num1,num2){
     
 }
 
+/* FUNCIÓN PARA MOSTRAR RESULTADOS DE FUNCIONES POSTERIORES */
 void mostrarNum(num){
 
         printf("\nDECIMAL: (%d)\n",num);
@@ -141,6 +143,7 @@ void mostrarNum(num){
 }
 
 
+/* FUNCIÓN PARA MOSTRAR AND DE LOS NÚMERO ENTEROS INGRESADOS */
 void mostrarAnd(num1, num2){
     int resultado;
     if(num1>0 && num2>0){
@@ -154,5 +157,74 @@ void mostrarAnd(num1, num2){
 
 }
 
+/* FUNCIÓN PARA MOSTRAR OR DE LOS NÚMERO ENTEROS INGRESADOS */
+void mostrarOr(num1, num2){
+    int resultado;
+    if(num1>0 && num2>0){
+        resultado = num1 | num2;
+        mostrarNum(resultado);
+        
+    }  
+    else{
+        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+    }
+
+}
+
+/* FUNCIÓN PARA MOSTRAR NOT DEL PRIMER NÚMERO TECLEADO*/
+void mostrarNot(num1){
+    int resultado;
+    if(num1>0){
+        resultado = !num1;
+        mostrarNum(resultado);
+        
+    }  
+    else{
+        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+    }
+
+}
+
+
+/* FUNCIÓN DE OPERACIÓN DE DIVISIÓN DE NÚMEROS INGRESADOS*/
+void division(num1,num2){
+    float resultado;
+    if(num1>0 && num2>0){
+        resultado = ((float)num1/(float)num2);
+        printf("El resultado de la división de %d y %d es: %.2f\n",num1,num2,resultado);
+         
+    }
+    else{
+        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+    }
+    
+}
+
+/* FUNCIÓN DE OPERACIÓN DE DIVISIÓN ENTERA DE NÚMEROS INGRESADOS*/
+void divisionEntera(num1,num2){
+    int resultado;
+    if(num1>0 && num2>0){
+        resultado = (num1/num2);
+        printf("El resultado de la división entera de %d y %d es: %d\n",num1,num2,resultado);
+
+    }
+    else{
+        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+    }
+
+}
+
+/* FUNCIÓN DE OPERACIÓN DEL MÓDULO DE NÚMEROS INGRESADOS*/
+void modulo(num1,num2){
+    int resultado;
+    if(num1>0 && num2>0){
+        resultado = (num1%num2);
+        printf("El resultado del modulo de %d y %d es: %d\n",num1,num2,resultado);
+    }
+    else{
+        printf("Aún no registra números enteros o su entrada es menor a 1...\n\n");
+    }
+
+}
 
 
