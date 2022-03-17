@@ -26,16 +26,16 @@ int main(void){
     scanf("%d",&exponente);
 
     resultado = potencia(numero, exponente);
-    printf("%d",resultado);
+    printf("Resultado: %d",resultado);
 
     return 0;
 }
 
 
 int potencia(num, exp){
-    int i, acumulador = num;
+    int cont, acumulador = num;
 
-    for(i=1;i<exp;i++){
+    for(cont=1;cont<exp;cont++){
         acumulador*=num;
     }
     return acumulador;

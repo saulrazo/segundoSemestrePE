@@ -27,7 +27,6 @@ Desplegar el menú otra vez
 
 */
 
-#include <stdio.h>
 
 int menu(void);
 float getQuant(void);
@@ -36,6 +35,9 @@ void ped(float);
 void dpe(float);
 void peu(float);
 void eup(float);
+
+#include <stdio.h>
+#include <stdlib.h>
 
 
 int main(void){
@@ -79,9 +81,13 @@ int main(void){
 
 
     default:
+      printf("Operación fnalizada...");
       break;
     }
+    
+    system("pause");
   } while (option!=0);
+  
 
     return 0;
 }
