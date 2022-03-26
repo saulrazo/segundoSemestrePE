@@ -45,10 +45,11 @@ int main(void){
     float quant;
     int lap;
 
-    printf("Monto a invertir: ");
+    printf("\n\nMonto a invertir: ");
     scanf("%f",&quant);
     printf("Años de la inversión: ");
     scanf("%d",&lap);
+    printf("*********************************************\n");
     intRate(quant,lap);
     
     return 0;
@@ -56,18 +57,22 @@ int main(void){
 
 void intRate(float quant, int lap){
     int count,year;
-    float rate=3,totalQuant;
+    float rate=3,totalQuant, quantCopy = quant;
 
     for (count=0;count<5;count++){
-      printf("\nTasa: %.1f", rate);
+      printf("\nTasa: %.1f%c", rate,'%');
 
         for(year=1;year<lap+1;year++){
-            totalQuant = quant*(1+((rate/100)*year));
-            printf("\nAño %d, monto = %.3f ",year,totalQuant);
+            totalQuant = quantCopy*(1+((rate/100)));
+            quantCopy = totalQuant;
+
+            printf("\nAño %d, monto = %.2f ",year,totalQuant);
+            
 
      
         }
       rate+=0.5;
+      quantCopy = quant;
       printf("\n");
     }
 
