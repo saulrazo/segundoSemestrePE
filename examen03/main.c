@@ -26,7 +26,9 @@ int main(void){
            break;
 
         case 2: // BINARIO
-            
+            printf("\nIngrese un valor para indicar su binario: ");
+            leer("%d",&numt);
+            binario(numt);
             break;
 
         case 3: // MCD
