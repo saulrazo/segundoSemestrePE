@@ -22,7 +22,7 @@ int main(void){
 
            printf("\nIngrese un valor para operar: ");
            leer("%d",&numt);
-
+           tripletas(numt);
            break;
 
         case 2: // BINARIO

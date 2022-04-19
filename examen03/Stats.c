@@ -12,6 +12,9 @@ int menu(void){
     return num;
 }
 
+void tripletas(int numt){
+    
+}
 
 void binario(int numt){
     if(numt>1){
