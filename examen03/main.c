@@ -8,7 +8,7 @@
 
 
 int main(void){
-    int opcion, numt;
+    int opcion, numt, num1, num2;
 
 
     printf("\nBIENVENIDO AL PROGRAMA EXAMEN EXTRA AULICO II...");
@@ -19,20 +19,26 @@ int main(void){
         {
 
         case 1: //TRIPLETAS
-
+           printf("\nTRIPLETAS");
            printf("\nIngrese un valor para operar: ");
            leer("%d",&numt);
            tripletas(numt);
            break;
 
         case 2: // BINARIO
+            printf("\nBINARIO");
             printf("\nIngrese un valor para indicar su binario: ");
             leer("%d",&numt);
             binario(numt);
             break;
 
         case 3: // MCD
-            
+            printf("\nMÁXIMO CÓMUN DIVISOR MCD");
+            printf("\nIngrese el primer valor: ");
+            leer("%d",&num1);
+            printf("\nIngrese el segundo valor: ");
+            leer("%d",&num2);
+            printf("%d",mcd(num1, num2));
             break;
 
 
