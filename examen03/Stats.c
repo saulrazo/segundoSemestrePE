@@ -13,12 +13,12 @@ int menu(void){
 }
 
 void tripletas(int numt){
-    int i,j,k;
-    for(i=0;i<50;i++){
-        for(j=0;j<50;j++){
-            for(k=0;k<50;k++){
-                if (((i+j+k)%numt)==0){
-                    printf("(%d - %d - %d) ",i,j,k);}}
+    int num1,num2,num3;
+    for(num1=0;num1<50;num1++){
+        for(num2=0;num2<50;num2++){
+            for(num3=0;num3<50;num3++){
+                if (((num1+num2+num3)!= 0) && (((num1+num2+num3)%numt)==0)){
+                    printf("\n%d - %d - %d",num1,num2,num3);}}
         }
     }    
 }
