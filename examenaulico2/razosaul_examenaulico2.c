@@ -45,6 +45,10 @@ int main(){
 
 
         case 5: //Término del DO WHILE si el usuario termina el programa
+            fillMatrix(matrix, MAX);
+            break;
+
+        case 6: //Término del DO WHILE si el usuario termina el programa
             printf("Proceso completado...");
             break;
         
@@ -54,7 +58,7 @@ int main(){
         }
 
 
-    } while (opcion!=5);
+    } while (opcion!=6);
 
 
     return 0;
@@ -68,9 +72,10 @@ int menu(void){
     printf("\n2)PROMEDIO TOTAL DE LA MATRIZ");
     printf("\n3)IMPRIMIR MATRIZ CON FILAS ORDENADAS");
     printf("\n4)IMPRIMIR PROMEDIO DE FILAS");
-    printf("\n5)Salir");
+    printf("\n5)GENERAR NUEVA MATRIZ");
+    printf("\n6)Salir");
 
-    printf("\n\nTeclee la opción deseada (1-4): ");
+    printf("\n\nTeclee la opción deseada (1-6): ");
     scanf("%d", &num);
     return num;
 }
