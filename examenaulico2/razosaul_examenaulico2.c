@@ -46,7 +46,7 @@ int main(){
 
         case 5: //Término del DO WHILE si el usuario termina el programa
             fillMatrix(matrix, MAX);
-            printf("La matriz con números aleatorios es:\n");
+            printf("La matriz con números aleatorios nueva es:\n");
             showMatrix(matrix, MAX);
             break;
 
@@ -150,7 +150,7 @@ for(columnas=0;columnas<MAX;columnas++)
  promedio+= m[filas][columnas];
  
 }
-promedio = (float)(promedio/(MAX*MAX));
+promedio = (promedio/(float)(MAX*MAX));
 return promedio;
  
 }
