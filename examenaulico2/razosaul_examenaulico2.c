@@ -46,6 +46,8 @@ int main(){
 
         case 5: //Término del DO WHILE si el usuario termina el programa
             fillMatrix(matrix, MAX);
+            printf("La matriz con números aleatorios es:\n");
+            showMatrix(matrix, MAX);
             break;
 
         case 6: //Término del DO WHILE si el usuario termina el programa
