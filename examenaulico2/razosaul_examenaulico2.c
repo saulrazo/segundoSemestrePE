@@ -15,7 +15,7 @@ int menu(void);
 int main(){
     int matrix[MAX][MAX], opcion;
 
-    printf("\nBIENVENIDO AL PROGRAMA EXAMEN II...");
+    printf("\nBIENVENIDO AL PROGRAMA EXAMEN ÁULICO II...");
     fillMatrix(matrix, MAX);
 
     do{ 
