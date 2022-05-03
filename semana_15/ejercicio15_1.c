@@ -2,7 +2,7 @@
 #include <string.h>
 
 void toUpperCase(char s2[],char s1[]);
-void reverseString(char s3[],char s1[]);
+void reverseString(char s1[]);
 
 int main(void){
     char s1[20] = "mesa azul";
@@ -14,7 +14,7 @@ int main(void){
     printf("\n%s",s2);
     lenght = strlen(s2);
     printf("\n%d",lenght);
-    reverseString(s3,s1);
+    reverseString(s1);
     printf("\n%s",s1);
     
 
@@ -38,17 +38,16 @@ actual++;
 }
 
 
-void reverseString(char s3[],char s1[])
+void reverseString(char s1[])
 {   
-    s3 = s1;
     
-    int lenght = strlen(s3);
+    int lenght = strlen(s1);
     int i;
-    for (i = 0; i < strlen(s3) / 2; i++)
+    for (i = 0; i < strlen(s1) / 2; i++)
     {
-        char temporal = s3[i];
-        s3[i] = s3[lenght - i - 1];
-        s3[lenght - i - 1] = temporal;
+        char temporal = s1[i];
+        s1[i] = s1[lenght - i - 1];
+        s1[lenght - i - 1] = temporal;
     }
 }
 
