@@ -1,3 +1,21 @@
+/*
+TAREA 24
+
+Escriba una función reverse que invierta el contenido de una cadena de texto.
+
+Estrategia: intercambia el primer carácter por el último, 2º por el penúltimo, etc.
+
+Así debería usarse:
+
+char string1[] = "Guadalajara";
+
+reverse(string1);
+
+printf("%s\n", string1);  // Imprime arajaladauG
+
+
+*/
+
 #include <stdio.h>
 #include <string.h>
 
