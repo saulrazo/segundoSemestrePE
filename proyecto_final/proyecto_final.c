@@ -8,7 +8,7 @@
 int main(){
 	int opt;
 	char txt[255];
-	printf("Proyecto integrador\n\n");
+	printf("BIENVENIDO AL PROYECTO INTEGRADO\n\n");
 do{
 		switch(menu()){
 			

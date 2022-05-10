@@ -1,9 +1,20 @@
 int menu(void){
     int num;
 
-	printf("\nMENU\n");
-	printf("-----------------\n1)Introducir texto (hasta 255 caracteres)\n2)Desplegar estadísticas\n3)Desplegar los pronombres encontrados\n4)Desplegar todas las palabras que comienzan con mayúsculas\n5)Desplegar los verbos en gerundio.\n6)Buscar una palabra en el texto.\n7)Intercambiar mayúsculas y minúsculas.\n8)Salir\n-----------------\n");
-    scanf("%d", &num);
+	printf("\n\nMENU\n");
+	printf("-----------------\n1)Introducir texto (hasta 255 caracteres)");
+    printf("\n2)Desplegar estadísticas");
+    printf("\n3)Desplegar los pronombres encontrados");
+    printf("\n4)Desplegar todas las palabras que comienzan con mayúsculas");
+    printf("\n5)Desplegar los verbos en gerundio.");
+    printf("\n6)Buscar una palabra en el texto.");
+	printf("\n7)Intercambiar mayúsculas y minúsculas.");
+	printf("\n8)Salir\n-----------------\n");
+
+
+
+
+	scanf("%d", &num);
     return num;
 }
 
@@ -36,10 +47,10 @@ int es(char* txt){
 			}
 		   }
    		}
-   	printf("\nel numero de vocales es: %i",nv);
-   	printf("\nel numero de consonantes es: %i",consonantes);
-   	printf("\nel numero de palabras es: %i",es+1);
-   	printf("\nel numero de espacios es: %i",es);
+   	printf("\nEl numero de vocales es: %i",nv);
+   	printf("\nEl numero de consonantes es: %i",consonantes);
+   	printf("\nEl numero de palabras es: %i",es+1);
+   	printf("\nEl numero de espacios es: %i",es);
 }
 
 int pro(char* txt){
@@ -55,6 +66,6 @@ int pro(char* txt){
 			}
 		   }
    		}
-   	printf("\nel numero de pronombres encontrados: %i",Pr);
+   	printf("\nEl numero de pronombres encontrados: %i",Pr);
 	
 }
