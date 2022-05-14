@@ -19,8 +19,14 @@ int menu(void){
 }
 
 
-
+int min(char* txt){
+    for(int i;txt[i]!='\0';++i){
+    txt[i]=tolower(txt[i]);
+	}
+}
 int es(char* txt){
+	
+	min(txt);
 	char v[5]={'a','e','i','o','u'};
 	int nv;
 	int c;
@@ -47,25 +53,55 @@ int es(char* txt){
 			}
 		   }
    		}
-   	printf("\nEl numero de vocales es: %i",nv);
-   	printf("\nEl numero de consonantes es: %i",consonantes);
-   	printf("\nEl numero de palabras es: %i",es+1);
-   	printf("\nEl numero de espacios es: %i",es);
+   	printf("\nel numero de vocales es: %i",nv);
+   	printf("\nel numero de consonantes es: %i",consonantes);
+   	printf("\nel numero de palabras es: %i",es+1);
+   	printf("\nel numero de espacios es: %i",es);
+}
+int P(char* pal){
+	min(pal);
+	const char* arr[]={"yo","tu","el","ella","nosotros","nosotras","ustedes","vosotros","vosotras","ellos","ellas"};
+	char *resultado= NULL;
+	int pro=0;
+	for(int i=0;i<11;i++){
+	resultado=strstr(pal,arr[i]);
+	if(resultado){
+		printf(arr[i]);
+		printf("\n");
+		pro++;
+	}
+	}
+	printf("\nel numero de pronombres es de: %i\n",pro);
+}
+int bus(char* pal,char* pal2){
+	
+	min(pal);
+	printf(pal);
+	char *resultado= NULL;
+	int pro=0;
+	resultado=strstr(pal,pal2);
+	if(resultado){
+		pro++;
+	}
+	printf("\nla palabra se repite %i veces\n",pro);
 }
 
-int pro(char* txt){
-	int Pr;
-	char p[11]={'yo', 'tu', 'el', 'ella', 'nosotros','nosotras','ustedes', 'vosotros', 'vosotras', 'ellos','ellas'};
-		for ( int pr = 0; pr <= 5; pr++ )
-		{
-			for ( int i = 0; i < strlen(txt); i++ )
-		   {
-			if(p[pr]==txt[i]){
-				printf("%c\n",txt[i]);
-				Pr++;
-			}
+
+int minMay(char* txt){ //INTERCAMBIAR MINÑUSCULAS POR MAYÚSCULAS Y VICEVERSA
+	printf("Texto original: %s\n",txt);
+	printf("Texto Invertido: ");
+   for (int i = 0; i < strlen(txt); i++ )
+   {
+   	if(txt[i]>64&&txt[i]<91){
+   		printf("%c",txt[i]+32);
+	   }
+	else{
+	   	   if(txt[i]>96&&txt[i]<122){
+	   		 printf("%c",txt[i]-32);
 		   }
-   		}
-   	printf("\nEl numero de pronombres encontrados: %i",Pr);
-	
+		   else{
+		   	printf("%c",txt[i]);
+		   }
+	   }
+	   }
 }
