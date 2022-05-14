@@ -31,10 +31,16 @@ int es(char* txt){
 	int nv;
 	int c;
 	int es=0;
+	int po=0;
 	int consonantes=0;
 	printf("%s\n",txt);
 	printf("El numero de caracteres es de: %d\n",strlen(txt));
 	for(int x=0;x<strlen(txt);x++){
+
+	if(txt[x]=='.'){
+	 	po++;
+	 }
+	
 	if(txt[x]==' '){
 		printf("%c",txt[x]);
 		es++;
@@ -53,11 +59,13 @@ int es(char* txt){
 			}
 		   }
    		}
-   	printf("\nel numero de vocales es: %i",nv);
-   	printf("\nel numero de consonantes es: %i",consonantes);
-   	printf("\nel numero de palabras es: %i",es+1);
-   	printf("\nel numero de espacios es: %i",es);
+   	printf("\nEl numero de vocales es: %i",nv);
+   	printf("\nEl numero de consonantes es: %i",consonantes);
+   	printf("\nEl numero de palabras es: %i",es+1);
+   	printf("\nEl numero de espacios es: %i",es);
+	printf("\nEl numero de parráfos es: %i",po+1);
 }
+
 int P(char* pal){
 	min(pal);
 	const char* arr[]={"yo","tu","el","ella","nosotros","nosotras","ustedes","vosotros","vosotras","ellos","ellas"};
@@ -73,6 +81,82 @@ int P(char* pal){
 	}
 	printf("\nel numero de pronombres es de: %i\n",pro);
 }
+
+
+int mayusStart(char* pal){
+	char palabras[20][40];
+	int row = 0;
+	int con = 0;
+	int es = 0;
+	int words = 0;
+
+	for(int x=0;x<strlen(pal);x++){
+	  if(pal[x]==' '){
+		es++;}}
+
+	words = es+1;
+
+	for(int i=0;i<(strlen(pal));i++){
+        if (pal[i]!=' '){
+            palabras[row][con] = pal[i];
+            con++;
+        }
+        else{
+            row++;
+            con = 0;
+        }
+    }
+
+    for(int j=0;j<words;j++){
+          if (palabras[j][0]>64 && palabras[j][0]<91){
+              printf("%s\n", palabras[j]);
+          }
+      }
+
+	
+
+}
+
+int gerundWords(char* pal){
+	char palabras[20][40];
+	int row = 0;
+	int con = 0;
+	int es = 0;
+	int words = 0;
+	const char* arr[]={"ando","endo"};
+	char *resultado = NULL;
+
+	for(int x=0;x<strlen(pal);x++){
+	  if(pal[x]==' '){
+		es++;}}
+
+	words = es+1;
+
+	for(int i=0;i<(strlen(pal));i++){
+        if (pal[i]!=' '){
+            palabras[row][con] = pal[i];
+            con++;
+        }
+        else{
+            row++;
+            con = 0;
+        }
+    }
+
+	for(int k=0;k<words;k++){
+          for(int l=0;l<2;l++){
+              resultado=strstr(palabras[k],arr[l]);
+
+              if(resultado){
+                  printf("%s\n",palabras[k]);}
+          }
+
+	  }
+
+	
+}
+
+
 int bus(char* pal,char* pal2){
 	
 	min(pal);

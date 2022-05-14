@@ -37,10 +37,12 @@ do{
         case 4: //
         	system("cls");
 			printf("\nDesplegar todas las palabras que comienzan con mayúsculas\n"); 
+            mayusStart(txt);
             break;
         case 5: //
         	system("cls");
         	printf("\nDesplegar los verbos en gerundio.\n");
+            gerundWords(txt);
             break;
         case 6:
         	system("cls");
