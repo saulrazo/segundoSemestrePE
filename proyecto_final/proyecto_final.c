@@ -37,7 +37,7 @@ do{     opt = menu();
         case 4: //
         	system("cls");
 			printf("\n| 4)DESPLEGAR PALABRAS QUE COMIENCEN CON MAYÚSCULAS |\n"); 
-            mayusStart(txt);
+            mayusStart(txtO);
             break;
         case 5: //
         	system("cls");
