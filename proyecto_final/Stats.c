@@ -123,8 +123,11 @@ int gerundWords(char* pal){
 	int con = 0;
 	int es = 0;
 	int words = 0;
+	const char* min_pal = NULL;
 	const char* arr[]={"ando","endo"};
 	char *resultado = NULL;
+
+	min(pal);
 
 	for(int x=0;x<strlen(pal);x++){
 	  if(pal[x]==' '){
