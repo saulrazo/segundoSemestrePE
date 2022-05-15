@@ -1,30 +1,29 @@
-int menu(void){
+int menu(void){ //DESPLIEGA EL MENÚ CADA VEZ QUE SE REALIZA UNA OPERACIÓN
     int num;
 
-	printf("\n\nMENU\n");
-	printf("-----------------\n1)Introducir texto (hasta 255 caracteres)");
+	printf("\n\n| MENU |\n");
+	printf("------------------------------------\n1)Introducir texto (hasta 255 caracteres)");
     printf("\n2)Desplegar estadísticas");
     printf("\n3)Desplegar los pronombres encontrados");
     printf("\n4)Desplegar todas las palabras que comienzan con mayúsculas");
     printf("\n5)Desplegar los verbos en gerundio.");
     printf("\n6)Buscar una palabra en el texto.");
 	printf("\n7)Intercambiar mayúsculas y minúsculas.");
-	printf("\n8)Salir\n-----------------\n");
-
-
-
+	printf("\n8)Salir\n------------------------------------\n");
+	printf("\nINGRESE UNA OPCIÓN: ");
 
 	scanf("%d", &num);
     return num;
 }
 
 
-int min(char* txt){
+int min(char* txt){ //CONVIERTE A MINÚSCULAS LA CADENA INGRESADA
     for(int i;txt[i]!='\0';++i){
     txt[i]=tolower(txt[i]);
 	}
 }
-int es(char* txt){
+
+int es(char* txt){ //FUNCIÓN DE ESTADÍSTICAS (CARACTERES, VOCALES, CONSONANTES, ESPACIOS, PALABRAS Y PARRÁFOS)
 	
 	min(txt);
 	char v[5]={'a','e','i','o','u'};
@@ -66,7 +65,8 @@ int es(char* txt){
 	printf("\nEl numero de parráfos es: %i",po+1);
 }
 
-int P(char* pal){
+
+int P(char* pal){ //DETERMINA LOS PRONOMBRES ENCONTRADOS
 	min(pal);
 	const char* arr[]={"yo","tu","el","ella","nosotros","nosotras","ustedes","vosotros","vosotras","ellos","ellas"};
 	char *resultado= NULL;
@@ -79,16 +79,17 @@ int P(char* pal){
 		pro++;
 	}
 	}
-	printf("\nel numero de pronombres es de: %i\n",pro);
+	printf("\nEl numero de pronombres es de: %i\n",pro);
 }
 
 
-int mayusStart(char* pal){
+int mayusStart(char* pal){ //DETERMINA LAS PALABRAS QUE EMPIECEN POR MAYÚSCULA HACIENDO USO DE MATRICES
 	char palabras[20][40];
 	int row = 0;
 	int con = 0;
 	int es = 0;
 	int words = 0;
+	int verificador = 0;
 
 	for(int x=0;x<strlen(pal);x++){
 	  if(pal[x]==' '){
@@ -107,22 +108,29 @@ int mayusStart(char* pal){
         }
     }
 
+
     for(int j=0;j<words;j++){
           if (palabras[j][0]>64 && palabras[j][0]<91){
               printf("%s\n", palabras[j]);
+			  verificador++;
           }
       }
+
+	if(verificador==0){
+		printf("NO SE ENCONTRARON PALABRAS CON INICIAL MAYÚSCULA...");
+	}
 
 	
 
 }
 
-int gerundWords(char* pal){
+int gerundWords(char* pal){ //DETERMINA LOS VERBOS EN GERUNDIO HACIENDO USO DE MATRICES
 	char palabras[20][40];
 	int row = 0;
 	int con = 0;
 	int es = 0;
 	int words = 0;
+	int verificador = 0;
 	const char* min_pal = NULL;
 	const char* arr[]={"ando","endo"};
 	char *resultado = NULL;
@@ -146,21 +154,29 @@ int gerundWords(char* pal){
         }
     }
 
+
 	for(int k=0;k<words;k++){
           for(int l=0;l<2;l++){
               resultado=strstr(palabras[k],arr[l]);
 
               if(resultado){
-                  printf("%s\n",palabras[k]);}
+                  printf("%s\n",palabras[k]);
+				  verificador++;
+			  }
           }
 
-	  }
+	}
+
+	if(verificador==0){
+		printf("NO SE ENCONTRARON VERBOS EN GERUNDIO...");
+	}
+
 
 	
 }
 
 
-int bus(char* pal,char* pal2){
+int bus(char* pal,char* pal2){ //BUSCA UNA PALABRA SOLICITADA EN EL TEXTO
 	
 	min(pal);
 	printf(pal);

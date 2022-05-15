@@ -13,40 +13,40 @@ int main(){
 	char pal[255];
 	char txtO[255];
 	printf("BIENVENIDO AL PROYECTO INTEGRADO\n\n");
-do{
-		switch(menu()){
+do{     opt = menu();
+		switch(opt){
         case 1: 
     	   system("cls");
-           printf("\nIntroducir texto (hasta 255 caracteres)\n");
+           printf("\n| 1)INTRODUCIR TEXTO (1-255 CARACTERES) |\n");
            getchar();
            gets(txt);
            system("cls");
            strcpy(txtO,txt);
-		   printf("Texto almacenado con exito!!\n\n");
+		   printf("TEXTO ALAMCENADO EXITOSAMENTE...\n\n");
            break;
         case 2:
         	system("cls");
-            printf("\nDesplegar estadísticas\n");
+            printf("\n| 2)DESPLEGAR ESTADÍSTICAS |\n");
             es(txt);
             break;
         case 3:
         	system("cls");
-            printf("\nDesplegar los pronombres encontrados\n");
+            printf("\n| 3)DESPLEGAR PRONOMBRES ENCONTRADOS |\n");
             P(txt);
             break;
         case 4: //
         	system("cls");
-			printf("\nDesplegar todas las palabras que comienzan con mayúsculas\n"); 
+			printf("\n| 4)DESPLEGAR PALABRAS QUE COMIENCEN CON MAYÚSCULAS |\n"); 
             mayusStart(txt);
             break;
         case 5: //
         	system("cls");
-        	printf("\nDesplegar los verbos en gerundio.\n");
+        	printf("\n| 5)DESPLEGAR VERBOS EN GERUNDIO |\n");
             gerundWords(txt);
             break;
         case 6:
         	system("cls");
-        	printf("\nBuscar una palabra en el texto.\n");
+        	printf("\n| 6)BUSCAR PALABRAS EN TEXTO |\n");
         	printf("Ingresa la palabra a buscar: ");
         	getchar();
 			gets(pal);
@@ -54,13 +54,16 @@ do{
             break;
         case 7: 
         	system("cls");
-        	printf("\nIntercambiar mayúsculas y minúsculas\n");
+        	printf("\n| 7)INTERCAMBIAR MAYÚSCULAS Y MINÚSCULAS |\n");
         	minMay(txtO);
+            break;
+
+        case 8: 
             break;
 
         default:
         	system("cls");
-            printf("Opción no válida\n");
+            printf("OPCIÓN NO VÁLIDA...\n");
             break;
 	}
 	}while(opt!=8);
