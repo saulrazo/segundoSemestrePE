@@ -190,7 +190,7 @@ int bus(char* pal,char* pal2){ //BUSCA UNA PALABRA SOLICITADA EN EL TEXTO
 }
 
 
-int minMay(char* txt){ //INTERCAMBIAR MINÑUSCULAS POR MAYÚSCULAS Y VICEVERSA
+int minMay(char* txt){ //INTERCAMBIAR MINUSCULAS POR MAYÚSCULAS Y VICEVERSA
 	printf("Texto original: %s\n",txt);
 	printf("Texto Invertido: ");
    for (int i = 0; i < strlen(txt); i++ )
